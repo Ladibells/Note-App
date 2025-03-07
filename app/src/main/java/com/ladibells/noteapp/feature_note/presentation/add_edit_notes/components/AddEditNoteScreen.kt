@@ -54,7 +54,6 @@ fun AddEditNoteScreen(
 ) {
     val titleState = viewModel.noteTitle.value
     val contentState = viewModel.noteContent.value
-    val drawerState = rememberDrawerState(DrawerValue.Closed)
     val snackbarHostState = remember { SnackbarHostState() }
 
     val noteBackgroundAnimatable = remember {
@@ -100,6 +99,7 @@ fun AddEditNoteScreen(
                 Icon(imageVector = Icons.Default.Save, contentDescription = "Save note")
             }
         },
+        snackbarHost = { snackbarHostState }
 
     ) { padding ->
         Column (
